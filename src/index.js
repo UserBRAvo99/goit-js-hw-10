@@ -1,3 +1,4 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import debounce from 'lodash.debounce';
 import { fetchCountries } from './css/api/fetchCountries';
 import { inputCountry, listCountries, countyInfo } from './refs';
@@ -16,10 +17,10 @@ function enteredCountry(event) {
     if (resolve.length === 1) {
       let markup = getMarkupCountry(resolve);
       addMarkupCountry(markup, listCountries);
-    } else if (resolve.length > 1) {
+    } else if (resolve.length > 10) {
       let markup = getMarkupListCountries(resolve);
       addMarkupCountry(markup, listCountries);
+      Notify.info('Too many matches found. Please enter a more specific name.');
     }
-    console.log(event);
   });
 }

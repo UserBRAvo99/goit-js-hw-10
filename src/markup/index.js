@@ -25,6 +25,7 @@ export function getMarkupListCountries(country) {
 }
 
 export function getMarkupCountry(country) {
+  console.log(country);
   return country
     .map(({ name, capital, population, flags, languages }) => {
       return `<li><ul style="
