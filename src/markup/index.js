@@ -27,7 +27,8 @@ export function getMarkupListCountries(country) {
 export function getMarkupCountry(country) {
   return country
     .map(({ name, capital, population, flags, languages }) => {
-      console.log(languages);
+      const arrLanguages = Object.values(languages).map(e => e);
+      console.log(arrLanguages);
       return `<li><ul style="
       list-style: none;
       display: flex;
@@ -66,8 +67,7 @@ font-weight: lighter;
 font-weight: bold;
 ">Languages: <span style="
 font-weight: lighter;
-">${languages}</span></li></ul></li>`;
+">${arrLanguages}</span></li></ul></li>`;
     })
     .join('');
 }
-// Object.values(languages).join(', ');
