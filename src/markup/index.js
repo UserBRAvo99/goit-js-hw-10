@@ -25,9 +25,9 @@ export function getMarkupListCountries(country) {
 }
 
 export function getMarkupCountry(country) {
-  console.log(country);
   return country
     .map(({ name, capital, population, flags, languages }) => {
+      console.log(languages);
       return `<li><ul style="
       list-style: none;
       display: flex;
@@ -70,3 +70,4 @@ font-weight: lighter;
     })
     .join('');
 }
+// Object.values(languages).join(', ');
