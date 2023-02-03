@@ -1,17 +1,7 @@
 export function getMarkupListCountries(country) {
   return country
     .map(({ name, flags }) => {
-      return `<li class="js-item-country" 
-      style="
-      display: flex;
-      align-items:
-      baseline;
-      padding: 2px 10px;
-      background-color: #d1cdc2;
-      border-radius: 10px; 
-      margin-bottom: 10px;
-      width: 400px;
-      "><img class="js-img-country;" src="${flags.svg}" alt="flag ${name.official}" width="25" height="25" style="
+      return `<li class="js-item-country"><img class="js-img-country;" src="${flags.svg}" alt="flag ${name.official}" width="25" height="25" style="
       align-items: baseline; 
       border-radius: 5px;
       margin-top: auto;
