@@ -5,7 +5,7 @@ import { listCountries } from '../../refs';
 const BASE_URL = 'https://restcountries.com/v3.1/name/';
 // функція fetchCountries приймає ім'я країни і динамічно додає до базового URL
 export function fetchCountries(name = 'peru') {
-  return fetch(BASE_URL + name).then(resolve => {
+  return fetch(BASE_URL + name + '?field=name').then(resolve => {
     //   перевірка чи статус запиту ОК, в іншому випадку перекидає на помилку(з текстом що за помилка)
     // console.log(resolve);
     if (resolve.ok) {
